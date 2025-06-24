@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ghost-shell"
+dynamic = ["version"]
+description = "AI-powered terminal assistant for command and code generation"
+readme = "README.md"
+authors = [
+    {name = "Maarij Aqeel", email = "maarijaqeel3200@gmail.com"}
+]
+
+requires-python = ">=3.8"
+dependencies = [
+    "google-generativeai>=0.3.0",
+    "python-dotenv>=1.0.0",
+    "rich>=13.0.0",
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=22.0.0",
+    "flake8>=5.0.0",
+    "mypy>=1.0.0",
+    "pre-commit>=2.20.0",
+]
+docs = [
+    "sphinx>=5.0.0",
+    "sphinx-rtd-theme>=1.0.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Maarij-Aqeel/GhostShell"
+
+[project.scripts]
+ghostshell = "Ghost_shell.cli:main"
+gshell = "Ghost_shell.cli:main"
+gsh = "Ghost_shell.cli:main"
+
+[tool.setuptools]
+include-package-data = true
+
+
+[tool.setuptools.dynamic]
+version = {attr = "Ghost_shell.__version__"}
+
+[tool.setuptools.packages.find]
+exclude = ["tests*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88

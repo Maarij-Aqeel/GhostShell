@@ -1,0 +1,6 @@
+include README.md
+include requirements.txt
+include .env.example
+recursive-include Ghost_shell *.py
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
