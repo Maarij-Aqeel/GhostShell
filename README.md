@@ -20,11 +20,6 @@
 
 ## Installation
 
-### From PyPI (Recommended)
-
-```bash
-pip install ghost-shell
-```
 
 ### From Source
 
