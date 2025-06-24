@@ -170,23 +170,6 @@ Contributions are welcome!
 
 ---
 
-## License
-
-MIT License – see [`LICENSE`](LICENSE) file for details.
-
----
-
-## Changelog
-
-### v1.0.0
-- Initial release
-- Basic AI command generation
-- Code generation capabilities
-- Safety features
-- Command history tracking  
-
----
-
 ### .env.example
 
 ```env
